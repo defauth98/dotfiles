@@ -1,0 +1,102 @@
+{
+  "window.menuBarVisibility": "toggle",
+
+  "workbench.colorTheme": "Omni",
+  "workbench.activityBar.visible": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+
+  "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.snippetSuggestions": "top",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "explorer.compactFolders": false,
+
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+
+  "editor.tabCompletion": "on",
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "markdown": "html"
+  },
+
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+
+  "extensions.ignoreRecommendations": true,
+
+  "typescript.tsserver.log": "verbose",
+
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+
+  "liveServer.settings.donotShowInfoMsg": true,
+  "material-icon-theme.activeIconPack": "nest",
+
+  "screencastMode.onlyKeyboardShortcuts": true,
+
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "websockets": "pipe",
+    "protos": "pipe",
+    "grpc": "pipe"
+  },
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d"
+  },
+
+  "colorize.languages": ["javascript", "typescript"],
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "cSpell.userWords": [
+    "INET",
+    "Pariquera",
+    "Tognnet",
+    "animationend",
+    "darkmagenta",
+    "divs",
+    "gmail",
+    "leds",
+    "smallname"
+  ],
+  "cSpell.language": "en,pt",
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.quietSync": true,
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontSize": 16,
+  "editor.renameOnType": true
+}
