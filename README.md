@@ -94,6 +94,9 @@ eval "$(ssh-agent -s)"
 
 #Adicione a sua lista de ssh keys
 ssh-add ~/.ssh/id_rsa
+
+# Instale o github cli
+yay -S github-cli
 ```
 
 Adicione a key na sua conta do github
