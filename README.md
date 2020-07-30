@@ -97,6 +97,9 @@ ssh-add ~/.ssh/id_rsa
 
 # Instale o github cli
 yay -S github-cli
+
+# Mude o tipo de protocolo
+gh config set git_protocol ssh
 ```
 
 Adicione a key na sua conta do github
