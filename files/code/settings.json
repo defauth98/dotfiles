@@ -1,0 +1,180 @@
+{
+  // Workbench
+  "workbench.colorTheme": "Omni",
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Window
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 0,
+
+  // Editor
+  "editor.quickSuggestions": false,
+  "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 24,
+  "editor.tabSize": 2,
+  "editor.renderLineHighlight": "gutter",
+  "breadcrumbs.enabled": true,
+  "editor.snippetSuggestions": "top",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.largeFileOptimizations": false,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true
+  },
+  "editor.suggestSelection": "first",
+  "editor.renameOnType": true,
+
+  // Explorer and extensions
+  "explorer.compactFolders": false,
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Javascript and typescript
+  "typescript.tsserver.log": "verbose",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // ESlint
+  "eslint.packageManager": "yarn",
+  "eslint.codeActionsOnSave.mode": "all",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // Prettier
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Colorize config
+  "colorize.languages": ["javascript", "typescript", "json", "html", "css"],
+
+  // Live server and settings sync
+  "liveServer.settings.donotShowInfoMsg": true,
+  "screencastMode.onlyKeyboardShortcuts": true,
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.quietSync": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  // Integrated terminal
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.fontSize": 16,
+
+  // Emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "editor.tabCompletion": "of",
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "markdown": "html"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+
+  // Settings sync
+  "sync.gist": "c3b3704c8ca10f01561de3fc1279bf4d",
+
+  // Advanced new files
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "node_modules_electron": true,
+    "dev": true,
+    "dist": true
+  },
+  "advancedNewFile.showInformationMessages": true,
+  "advancedNewFile.convenienceOptions": ["last", "current", "root"],
+
+  // Material icon theme
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "websockets": "pipe",
+    "protos": "pipe",
+    "grpc": "pipe"
+  },
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d"
+  },
+
+  // Speel check
+  "cSpell.language": "en,pt,pt_BR",
+  "cSpell.userWords": [
+    "Alacritty",
+    "Archivo",
+    "Borderless",
+    "INET",
+    "Ionicons",
+    "Pariquera",
+    "Tearcher",
+    "Tognnet",
+    "Zshell",
+    "animationend",
+    "bordertopleft",
+    "browserslist",
+    "darkmagenta",
+    "divs",
+    "gmail",
+    "knexfile",
+    "leds",
+    "mkdir",
+    "pacman",
+    "proffys",
+    "respawn",
+    "secundary",
+    "signin",
+    "smallname",
+    "tsnd",
+    "whatsapp"
+  ],
+  "cSpell.languageSettings": []
+}
