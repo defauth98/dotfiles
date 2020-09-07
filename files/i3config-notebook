@@ -28,8 +28,10 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec "rofi -combi-modi window,drun -theme DarkBlue -font 'hack 14' -show combi -icon-theme 'Flat-Remix' -show-icons"
+# launch rofi 
+bindsym $mod+p exec "rofi -combi-modi window,drun -theme Arc-Dark -font 'hack 14' -show combi -icon-theme 'Flat-Remix' -show-icons"
+bindsym $mod+Tab exec "rofi -combi-modi window,drun -theme Arc-Dark -font 'hack 14' -show window -icon-theme 'Flat-Remix' -show-icons"
+
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
@@ -85,38 +87,41 @@ bindsym $mod+n focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 1:   BROWSER"
-set $ws2 "2 2:   TERM"
-set $ws3 "3 3:   CODE"
-set $ws4 "4 4:   OTHERS"
-set $ws5 "5 5:   FILES"
-set $ws6 "6 6:   BROWSER"
-set $ws7 "7 7:  SPOTIFY"
-set $ws8 "8 8:  OTHERS"
-set $ws9 "9"
+set $ws2 "2 2:   TERMINAL"
+set $ws3 "3 3:   CODE"
+set $ws4 "4 4:   TOOLS"
+set $ws5 "5 5:   DOCS"
+set $ws6 "6 6:   OTHERS"
+set $ws7 "7 A:   FILES"
+set $ws8 "8 S:   BROWSER"
+set $ws9 "9 D:   MUSIC+TIMER"
+set $ws10 "10 F:   OTHERS"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
-#wk5
-#wk6
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
 
-bindsym $mod+a workspace number $ws5
-bindsym $mod+s workspace number $ws6
-bindsym $mod+d workspace number $ws7
-bindsym $mod+f workspace number $ws8
-
+bindsym $mod+a workspace number $ws7
+bindsym $mod+s workspace number $ws8
+bindsym $mod+d workspace number $ws9
+bindsym $mod+f workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+a move container to workspace number $ws5
-bindsym $mod+Shift+s move container to workspace number $ws6
-bindsym $mod+Shift+d move container to workspace number $ws7
-bindsym $mod+Shift+f move container to workspace number $ws8
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+
+bindsym $mod+Shift+a move container to workspace number $ws7
+bindsym $mod+Shift+s move container to workspace number $ws8
+bindsym $mod+Shift+d move container to workspace number $ws9
+bindsym $mod+Shift+f move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -150,14 +155,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+bracketleft  workspace prev
+bindsym $mod+bracketright workspace next
+
 # Open most used programs
-bindsym $mod+Shift+n exec "thunar"
+bindsym $mod+Mod1+f exec "thunar"
+bindsym $mod+Mod1+g exec "gimp"
+bindsym $mod+Mod1+b exec "brave"
+bindsym $mod+Mod1+n exec "nitrogen"
+bindsym $mod+Mod1+w exec "libreoffice"
 
 #gaps
 smart_gaps on
 smart_borders on
-gaps inner  4
-gaps outer  4
+gaps inner  2
+gaps outer  2
 gaps horizontal 1
 gaps vertical 1
 
@@ -177,10 +189,12 @@ workspace 1 output HDMI1
 workspace 2 output HDMI1
 workspace 3 output HDMI1
 workspace 4 output HDMI1
-workspace 5 output eDP1
-workspace 6 output eDP1
+workspace 5 output HDMI1
+workspace 6 output HDMI1
 workspace 7 output eDP1
 workspace 8 output eDP1
+workspace 9 output eDP1
+workspace 10 output eDP1
 
 bar {
   i3bar_command i3bar
@@ -213,7 +227,7 @@ for_window [class="Brave-browser"] move to workspace $ws1 focus
 
 # Workspace 2 - suite office e os terminais
 # veja uma suite office do seu ag'rado para usar tanto no windows quanto no linux
-for_window [class="DesktopEditors"] move to workspace $ws2 focus
+#for_window [class="DesktopEditors"] move to workspace $ws2 focus
 
 # Workspace 3 - IDE de desenvolvimento
 for_window [class="Code"] move to workspace $ws3 focus
@@ -221,29 +235,40 @@ for_window [class="Electron"] move to workspace $ws3 focus
 for_window [class="jetbrains-studio"] move to workspace $ws3 focus
 for_window [class="jetbrains-idea-ce"] move to workspace $ws3 focus
 
-# Workspace 4 - Insominia e outros apps
-for_window [class="discord"] move to workspace $ws4 focus
-for_window [class="zoom"] move to workspace $ws4 focus
+# Workspace 4 - tools
 for_window [class="Insomnia"] move to workspace $ws4 focus
 for_window [class="Postbird"] move to workspace $ws4 focus
-for_window [class="Pamac-manager"] move to workspace $ws4 focus
+for_window [class="Gimp"] move to workspace $ws4 focus
+for_window [class="Nitrogen"] move to workspace $ws4 focus
 
-# Workspace 5 - Explorador de arquivos
-for_window [class="Org.gnome.Nautilus"] move to workspace $ws5 focus
-for_window [class="Thunar"] move to workspace $ws5 focus
+# Workspace 5 - Docs
+for_window [class="DesktopEditors"] move to workspace $ws5 focus
+for_window [class="^libreoffice"] move to workspace $ws5 focus
 
-# Workspace 6 - Outro navegador
-for_window [class="firefox"] move to workspace $ws6 focus
+# Workspace 6 - OTHERS
+for_window [class="discord"] move to workspace $ws6 focus
+for_window [class="zoom"] move to workspace $ws6 focus
+for_window [class="Pamac-manager"] move to workspace $ws6 focus
 
-# Workspace 7 - Another apps
-for_window [class="productivity-timer"] move to workspace $ws7 focus
+# Workspace 7:A - files 
+for_window [class="Org.gnome.Nautilus"] move to workspace $ws7 focus
+for_window [class="Thunar"] move to workspace $ws7 focus
 
-# Workspace 8 - vlc, media players and spotify
-for_window [class="vlc"] move to workspace $ws8 focus
+# Workspace 8:S - browser
+#for_window [class="firefox"] move to workspace $ws8 focus
+
+# Workspace 9:D - music+timer
+for_window [class="productivity-timer"] move to workspace $ws9 focus
+for_window [class="vlc"] move to workspace $ws9 focus
+for_window [class="banshee"] move to workspace $ws9 focus
+
+# Workspace 10:F - vlc, media players and spotify
+#for_window [class="x"] move to workspace $ws10 focus
 
 # Another windows configs
 for_window [class="GParted"] floating enable 
 for_window [class="^Gnome-calculator"] floating enable 
+for_window [class="banshee"] floating enable
 
 # Startup programs
 exec_always --no-startup-id xrandr --output eDP1 --auto --left-of HDMI1
@@ -254,4 +279,4 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec alacritty move to workspace $ws8 focus 
+
