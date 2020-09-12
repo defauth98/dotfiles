@@ -1,3 +1,4 @@
+
 #### 1 - i3
 
 ```sh
@@ -122,3 +123,21 @@ tmux
 # Instale os plugins
 prefix (CRTL + A) + I (shift + i)
 ```
+
+#### Windows 10 Apps
+
+ - [Google Chrome](https://www.google.com/intl/pt-BR/chrome/) (Navegador)
+ - [Brave](https://brave.com/download/) (Navegador)
+ - [Firefox](https://www.mozilla.org/pt-BR/firefox/new/) (Navegador)
+ - [Visual Studio Code](https://code.visualstudio.com/) (Editor de código)
+ - [Windows Terminal](https://github.com/microsoft/terminal) (Emulador de terminal)
+ - [Discord](https://discord.com/) (App de mensagem)
+ - [Winrar](https://www.win-rar.com/start.html?&L=0) (Compactador de arquivos)
+ - [KeePassXC](https://keepassxc.org/download/#windows) (Gerenciador de senhas)
+ - [Inkscape](https://inkscape.org/release/inkscape-1.0.1/) (Editor de vetores)
+ - [Gimp](https://www.gimp.org/downloads/) (Editor de imagens)
+ - [Kdenlive](https://kdenlive.org/en/download/) (Editor de vídeo)
+ - [Steam](https://store.steampowered.com/about/) (Plataforma para baixar jogos)
+ - [NetBeans](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk-netbeans-jsp-3413153-ptb.html) (IDE de desenvolvimento)
+ - [QbitTorrent](https://www.qbittorrent.org/download.php) (Software para baixar torrents)
+ - [Libreoffice](https://www.libreoffice.org/download/download/) (Suite office)
