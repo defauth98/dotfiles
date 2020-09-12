@@ -1,18 +1,17 @@
-
 #### 1 - i3
 
 ```sh
 # Instale o i3
-sudo pacman -S i3 polybar nitrogen dmenu rofi picom
+sudo pacman -S i3 nitrogen  rofi
+
+# Instale o yay
+sudo pacman -S yay
 
 # Va para o diretório do dotfiles
 cd code/github/dotfiles
 
 # Copie os arquivos de configuração do i3
 cp files/i3config $HOME/.config/i3/config
-
-# Copie os arquivos de configuração do polybar
-cp files/polybar $HOME/.config/polybar -r
 ```
 
 #### 2 - Alacritty Terminal
@@ -21,8 +20,8 @@ cp files/polybar $HOME/.config/polybar -r
 # Instale o Alacritty
 sudo pacman -S alacritty
 
-# Instale a fonte Fira Code
-yay -S ttf-fira-code
+# Instale a fonte
+yay -S ttf-jetbrains-mono
 
 # Crie o diretório de configuração do alacritty
 mkdir $HOME/.config/alacritty
@@ -68,12 +67,9 @@ vim
 
 #### 5 - VS code
 
-```sh
-# Instale o yay
-sudo pacman -S yay
-
+```shtm
 # Instale o code
-yay -S code
+yay -S visual-studio-code-bin
 ```
 
 Instale a extensão settings sync e faça o login com o github
@@ -124,20 +120,45 @@ tmux
 prefix (CRTL + A) + I (shift + i)
 ```
 
+#### Linux Apps
+
+```sh
+# Todos os programas
+yay -S libreoffice-fresh gimp inkscape thunar vlc insomnia
+
+# Libreoffice (Suite Office)
+yay -S libreoffice-fresh
+
+# Gimp (Editor de imagens)
+yay -S gimp
+
+# Inkscape (Editor de vetores)
+yay -S inkscape
+
+# Explorador de arquivos
+yay -S thunar
+
+# Reprodutor de videos e músicas
+yay -S vlc
+
+# Testador de API
+yay -S insomnia
+```
+
 #### Windows 10 Apps
 
- - [Google Chrome](https://www.google.com/intl/pt-BR/chrome/) (Navegador)
- - [Brave](https://brave.com/download/) (Navegador)
- - [Firefox](https://www.mozilla.org/pt-BR/firefox/new/) (Navegador)
- - [Visual Studio Code](https://code.visualstudio.com/) (Editor de código)
- - [Windows Terminal](https://github.com/microsoft/terminal) (Emulador de terminal)
- - [Discord](https://discord.com/) (App de mensagem)
- - [Winrar](https://www.win-rar.com/start.html?&L=0) (Compactador de arquivos)
- - [KeePassXC](https://keepassxc.org/download/#windows) (Gerenciador de senhas)
- - [Inkscape](https://inkscape.org/release/inkscape-1.0.1/) (Editor de vetores)
- - [Gimp](https://www.gimp.org/downloads/) (Editor de imagens)
- - [Kdenlive](https://kdenlive.org/en/download/) (Editor de vídeo)
- - [Steam](https://store.steampowered.com/about/) (Plataforma para baixar jogos)
- - [NetBeans](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk-netbeans-jsp-3413153-ptb.html) (IDE de desenvolvimento)
- - [QbitTorrent](https://www.qbittorrent.org/download.php) (Software para baixar torrents)
- - [Libreoffice](https://www.libreoffice.org/download/download/) (Suite office)
+- [Google Chrome](https://www.google.com/intl/pt-BR/chrome/) (Navegador)
+- [Brave](https://brave.com/download/) (Navegador)
+- [Firefox](https://www.mozilla.org/pt-BR/firefox/new/) (Navegador)
+- [Visual Studio Code](https://code.visualstudio.com/) (Editor de código)
+- [Windows Terminal](https://github.com/microsoft/terminal) (Emulador de terminal)
+- [Discord](https://discord.com/) (App de mensagem)
+- [Winrar](https://www.win-rar.com/start.html?&L=0) (Compactador de arquivos)
+- [KeePassXC](https://keepassxc.org/download/#windows) (Gerenciador de senhas)
+- [Inkscape](https://inkscape.org/release/inkscape-1.0.1/) (Editor de vetores)
+- [Gimp](https://www.gimp.org/downloads/) (Editor de imagens)
+- [Kdenlive](https://kdenlive.org/en/download/) (Editor de vídeo)
+- [Steam](https://store.steampowered.com/about/) (Plataforma para baixar jogos)
+- [NetBeans](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk-netbeans-jsp-3413153-ptb.html) (IDE de desenvolvimento)
+- [QbitTorrent](https://www.qbittorrent.org/download.php) (Software para baixar torrents)
+- [Libreoffice](https://www.libreoffice.org/download/download/) (Suite office)
