@@ -8,31 +8,48 @@ export ZSH="/home/defauth/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 ZSH_THEME="spaceship"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Docker alias
+alias kali='docker run -t -i kalilinux/kali-rolling /bin/bash'
+
+# yarn alias
+alias aa="clear && yarn start"
+alias y="yarn"
+alias tt="yarn test"
+
+# Projetos atuais
+alias backend="~/code/scripts/backend.sh"
+
 # My alias
 #alias cat="bat"
-alias manual="tldr"
 alias zshc='vim ~/.zshrc'
-alias ohg='vim ~/.oh-my-zsh'
-alias ys="yarn start"
-alias yd="yarn dev"
+alias yy="clear && yarn start"
 alias dstop="sudo systemctl stop docker"
 alias dstart="sudo systemctl start docker"
-alias desec="$HOME/organizacao/desec.sh"
-alias ethical="$HOME/organizacao/ethical.sh"
-alias metasploitable="VBoxManage startvm 'Metasploitable'"
-alias winxp="VBoxManage startvm 'IE6 - WinXP'"
-alias meudia="clear && cat $HOME/organizacao/meudia.md"
-alias i3c="vim .config/i3/config"
-alias myrepo="echo 'https://github.com/defauth98?tab=repositories'"
 alias repo='gh repo view --web'
+alias update="yay -Syyuu"
 
-# Spaceship config
+#Minhas VMs
+alias vmkali="vboxmanage startvm 'Kali Linux'"
+alias kalivpn="vboxmanage startvm 'Kali HTB/THM'"
+alias vmmeta="vboxmanage startvm 'Metasploitable'"
+alias vm7="vboxmanage startvm 'IE8 - Win7'"
+alias vmxp="vboxmanage startvm 'IE6 - WinXP'"
+
+#Iniciar as vms do curso de ethical hacking
+alias pen="~/code/scripts/pen.sh"
+alias stopen="~/code/scripts/stoppen.sh"
+
+#Emulador de android pixel 3
+alias android="emulator -avd Pixel_3a_API_30_x86"
+
+#Spaceship config
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
@@ -40,7 +57,7 @@ SPACESHIP_PROMPT_ORDER=(
   git           # Git section (git_branch + git_status)
   hg            # Mercurial section (hg_branch  + hg_status)
   exec_time     # Execution time
-  line_sep      # Line break
+  line_sep      # Line breakp
   vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
@@ -48,19 +65,13 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
+#SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SYMBOL="🔥"
 SPACESHIP_CHAR_SUFFIX=" "
 
-SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=red
-
-# Simplify prompt if we're using Hyper
-# if [[ "$TERM_PROGRAM" == "Hyper" ]]; then
-#   SPACESHIP_PROMPT_SEPARATE_LINE=false
-#   SPACESHIP_DIR_SHOW=true
-#   SPACESHIP_GIT_BRANCH_SHOW=false
-# fi
-
+#SPACESHIP_PROMPT_SEPARATE_LINE=false
+#SPACESHIP_DIR_SHOW=false
+#SPACESHIP_GIT_BRANCH_SHOW=false
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -89,6 +100,7 @@ zplugin light zsh-users/zsh-history-substring-search
 zplugin light zsh-users/zsh-completions
 zplugin light buonomo/yarn-completion
 
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -97,3 +109,13 @@ PERL5LIB="/home/defauth/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5L
 PERL_LOCAL_LIB_ROOT="/home/defauth/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/defauth/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/defauth/perl5"; export PERL_MM_OPT;
+fpath=($fpath "/home/defauth/.zfunctions")
+
+. $HOME/.asdf/asdf.sh
+
+export ANDROID_HOME=/home/defauth/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
