@@ -1,20 +1,16 @@
-#### 1 - i3
+### Configuração do alacritty (Emulador do terminal)
 
-```sh
-# Instale o i3
-sudo pacman -S i3 nitrogen  rofi
+<img src="./.github/alacritty.png" alt="Alacritty Terminal">
 
-# Instale o yay
-sudo pacman -S yay
+---
 
-# Va para o diretório do dotfiles
-cd code/github/dotfiles
+### Configuração do neovim
 
-# Copie os arquivos de configuração do i3
-cp files/i3config $HOME/.config/i3/config
-```
+<img src="./.github/neovim.png" alt="Neovim">
 
-#### 2 - Alacritty Terminal
+#### 1 - Alacritty Terminal
+
+> Esses comandos abaixos servem para distro baseadas no arch linux.
 
 ```sh
 # Instale o Alacritty
@@ -30,7 +26,7 @@ mkdir $HOME/.config/alacritty
 cp files/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ```
 
-#### 3 - Zshell
+#### 2 - Zshell
 
 ```sh
 # Verifique se o Zshell está instalado
@@ -49,7 +45,9 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 cp files/zshrc $HOME/.zshrc
 ```
 
-#### 4 - VIM
+#### 3 - VIM
+
+> As configuraçoes do neovim estão na pasta files/neovim
 
 ```sh
 # Instale o vundle
@@ -65,16 +63,16 @@ vim
 :PluginInstall
 ```
 
-#### 5 - VS code
+#### 4 - VS code
 
-```shtm
+```sh
 # Instale o code
 yay -S visual-studio-code-bin
 ```
 
 Instale a extensão settings sync e faça o login com o github
 
-#### 6 - Git
+#### 5 - Git
 
 ```sh
 # Va para o diretório do dotfiles
@@ -101,7 +99,7 @@ gh config set git_protocol ssh
 
 Adicione a key na sua conta do github
 
-#### 7 - Tmux
+#### 6 - Tmux
 
 ```sh
 # Instale o tmux
