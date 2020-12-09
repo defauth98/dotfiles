@@ -1,22 +1,110 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH="/home/defauth/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Set cursor 
+echo -en "\e[=2c"
+
+#set -o vi
+EDITOR="nvim"
+
+# My functions
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+function ppgrep() {
+    if [[ $1 == "" ]]; then
+        PERCOL=percol
+    else
+        PERCOL="percol --query $1"
+    fi
+    ps aux | eval $PERCOL | awk '{ print $2 }'
+}
+
+function ppkill() {
+    if [[ $1 =~ "^-" ]]; then
+        QUERY=""            # options only
+    else
+        QUERY=$1            # with a query
+        [[ $# > 0 ]] && shift
+    fi
+    ppgrep $QUERY | xargs kill $*
+}
 
 ZSH_THEME="spaceship"
 
 plugins=(git)
+plugins=(zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
-# Docker alias
-alias kali='docker run -t -i kalilinux/kali-rolling /bin/bash'
+# Programs alias
+alias top="bashtop"
+
+# Config alias
+alias termconf="code ~/.config/alacritty/alacritty.yml"
+alias vimconf="code .config/nvim/init.vim"
+
+# LS to Exa
+alias l='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+
+# Colorize grep output (good for log files)��,��,
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+# git
+alias addup='git add -u'
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias status='git status'
+alias tag='git tag'
+alias newtag='git tag -a'
+alias amend="git commit --amend"
+
+# git g
+alias g="git"
+
+#alias vim for nvim
+alias v="nvim"
+alias vim="nvim"
 
 # yarn alias
 alias aa="clear && yarn start"
@@ -24,16 +112,10 @@ alias y="yarn"
 alias tt="yarn test"
 
 # Projetos atuais
-alias backend="~/code/scripts/backend.sh"
-
 # My alias
-#alias cat="bat"
-alias zshc='vim ~/.zshrc'
-alias yy="clear && yarn start"
 alias dstop="sudo systemctl stop docker"
 alias dstart="sudo systemctl start docker"
 alias repo='gh repo view --web'
-alias update="yay -Syyuu"
 
 #Minhas VMs
 alias vmkali="vboxmanage startvm 'Kali Linux'"
@@ -56,7 +138,6 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   git           # Git section (git_branch + git_status)
   hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
   line_sep      # Line breakp
   vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
@@ -65,13 +146,9 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-#SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SYMBOL="🔥"
-SPACESHIP_CHAR_SUFFIX=" "
-
-#SPACESHIP_PROMPT_SEPARATE_LINE=false
-#SPACESHIP_DIR_SHOW=false
-#SPACESHIP_GIT_BRANCH_SHOW=false
+SPACESHIP_CHAR_SYMBOL="⚡️"
+#SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_PROMPT_SEPARATE_LINE=true
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -95,9 +172,9 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 zplugin light zdharma/fast-syntax-highlighting
-zplugin light zsh-users/zsh-autosuggestions
+#zplugin light zsh-users/zsh-autosuggestions
 zplugin light zsh-users/zsh-history-substring-search
-zplugin light zsh-users/zsh-completions
+#zplugin light zsh-users/zsh-completions
 zplugin light buonomo/yarn-completion
 
 
@@ -119,3 +196,4 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
