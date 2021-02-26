@@ -1,3 +1,8 @@
+## Meu sistema operacional
+
+Linux: Manjaro (Gnome)
+Kernel: 20.2.1
+
 ### Configuração do alacritty (Emulador do terminal)
 
 <img src="./.github/alacritty.png" alt="Alacritty Terminal">
