@@ -10,7 +10,7 @@
 
   // Editor
   "editor.quickSuggestions": false,
-  "editor.fontFamily": "'Jetbrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontWeight": "400",
   "editor.fontSize": 17,
   "editor.fontLigatures": true,
