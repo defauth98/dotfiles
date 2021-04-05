@@ -1,17 +1,8 @@
 {
-  //Tailwind
-  "css.validate": false,
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "html"
-  },
-  "tailwindCSS.emmetCompletions": true,
-
-  // Workbench configs
-  // "workbench.activityBar.visible": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 0,
-
   // Editor
+  "editor.wordWrap": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": true,
   "editor.fontFamily": "'Jetbrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontWeight": "400",
@@ -108,7 +99,10 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "always",
   "editor.tabCompletion": "off",
-  "emmet.excludeLanguages": [],
+  "emmet.excludeLanguages": [
+    "javascript",
+    "typescript",
+  ],
   "emmet.includeLanguages": {
     "markdown": "html"
   },
@@ -165,6 +159,7 @@
     "Borderless",
     "INET",
     "Ionicons",
+    "Objectkeys",
     "Pariquera",
     "Tearcher",
     "Tognnet",
@@ -178,15 +173,16 @@
     "knexfile",
     "leds",
     "mkdir",
+    "objectkey",
     "pacman",
     "proffys",
     "respawn",
     "secundary",
     "signin",
     "smallname",
+    "trybe",
     "tsnd",
-    "whatsapp",
-    "trybe"
+    "whatsapp"
   ],
   "cSpell.languageSettings": [],
   "tabnine.experimentalAutoImports": true,
@@ -196,24 +192,29 @@
   // Git Lens
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
-  "editor.wordWrap": "on",
   "git.enableSmartCommit": true,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "workbench.sideBar.location": "left",
   "vscode-neovim.neovimInitVimPaths.linux": "/home/defauth/.config/nvim/init.vim",
-
   "workbench.editor.showTabs": true,
-
   "workbench.list.automaticKeyboardNavigation": false,
-  "editor.cursorBlinking": "solid",
   "terminal.external.linuxExec": "/usr/bin/alacritty",
-
   "material-icon-theme.showWelcomeMessage": false,
-  "editor.snippetSuggestions": "bottom",
   "liveServer.settings.donotVerifyTags": true,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.enabled": false,
   "window.menuBarVisibility": "toggle",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Omni",
-  "workbench.iconTheme": "material-icon-theme"
+   //Tailwind
+   "css.validate": false,
+   "tailwindCSS.includeLanguages": {
+     "plaintext": "html"
+   },
+   "tailwindCSS.emmetCompletions": true,
+ 
+   // Workbench configs
+   // "workbench.activityBar.visible": false,
+   "workbench.startupEditor": "newUntitledFile",
+   "window.zoomLevel": 0
 }
