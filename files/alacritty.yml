@@ -2,13 +2,15 @@ env:
   TERM: xterm-256color
 
 window:
+  dimensions:
+    columns: 155
+    lines: 36
   padding:
-    x: 8
-    y: 8
-
+    x: 16
+    y: 16
+  dynamic_title: true
   # Window title
   title: Alacritty
-
   # Window class (Linux/BSD only):
   class:
     # Application instance name
@@ -19,74 +21,71 @@ window:
 scrolling:
   history: 5000
 
-background_opacity: 1
+background_opacity: 0.95
 
 font:
   # The normal (roman) font face to use.
   normal:
     family: "Fira Code"
-    #family: "Roboto Mono"
-    # family: "Hack"
-    #family: "Meslo LG L"
-    # Style can be specified to pick a specific face.
-    style: Semibold
+    # family: "Nerd Font Cascadia Code"
+    # family: "Meslo LG L"
+    # family: "Inconsolata"
+    style: Regular
 
   # The bold font face
   bold:
-    # family: "Roboto Mono"
     # family: "Hack"
-    #family: "Droid Sans Mono"
     family: "Fira Code"
+    # family: "Meslo LG L"
+    # family: "Inconsolata"
     # Style can be specified to pick a specific face.
-    style: Bold
+    style: Semibold
 
   # The italic font face
   italic:
-    # family: "Roboto Mono"
-    #family: "Droid Sans Mono"
+    # family: "Inconsolata"
+    # family: "Meslo LG L"
     family: "Fira Code"
-    #family: "Hack"
+    # family: "Hack"
     # Style can be specified to pick a specific face.
     style: Italic
   # Point size
   size: 13.0
-
 cursor:
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
   style: Beam
-#dynamic_title: true
+  blinking: Always
+  blink_interval: 500
+
+custom_cursor_colors: true
+hide_cursor_when_typing: true
+# Colors (iTerm 2 default theme)
 colors:
-  name: Brewer (dark)
-  author: Chris Kempson
+  # Default colors
   primary:
-    background: "#191622"
-    foreground: "#e1e1e6"
-  cursor:
-    text: "#0c0d0e"
-    cursor: "#f8f8f2"
+    background: "0x101421"
+    foreground: "0xfffbf6"
+
+  # Normal colors
   normal:
-    black: "#000000"
-    red: "#ff5555"
-    green: "#50fa7b"
-    yellow: "#effa78"
-    blue: "#bd93f9"
-    magenta: "#ff79c6"
-    cyan: "#8d79ba"
-    white: "#bfbfbf"
+    black: "0x2e2e2e"
+    red: "0xeb4129"
+    green: "0xabe047"
+    yellow: "0xf6c744"
+    blue: "0x47a0f3"
+    magenta: "0x7b5cb0"
+    cyan: "0x64dbed"
+    white: "0xe5e9f0"
+
+  # Bright colors
   bright:
-    black: "#4e4e4e"
-    red: "#ff6e67"
-    green: "#5af78e"
-    yellow: "#eaf08d"
-    blue: "#caa9fa"
-    magenta: "#ff92d0"
-    cyan: "#aa91e3"
-    white: "#e6e6e6"
+    black: "0x565656"
+    red: "0xec5357"
+    green: "0xc0e17d"
+    yellow: "0xf9da6a"
+    blue: "0x49a4f8"
+    magenta: "0xa47de9"
+    cyan: "0x99faf2"
+    white: "0xffffff"
 
 key_bindings:
   # (Windows, Linux, and BSD only)

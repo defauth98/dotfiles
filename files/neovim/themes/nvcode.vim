@@ -1,7 +1,6 @@
 hi Comment cterm=italic
 let g:nvcode_termcolors=256
 
-
 syntax on
 " colorscheme nord
 " colorscheme nvcode
@@ -9,8 +8,10 @@ syntax on
 " colorscheme TSnazzy
 " colorscheme aurora
 " colorscheme dracula
-"colorscheme onedark
+colorscheme onedark
 
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 
 if (has("termguicolors"))

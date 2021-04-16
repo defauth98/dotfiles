@@ -82,3 +82,11 @@ augroup RestoreCursorShapeOnExit
   autocmd VimLeave * set guicursor+=a:ver1-Cursor/lCursor
 augroup END
 
+" Set the background theme to dark
+set background = "dark"
+
+colorscheme dracula 
+
+" This line enables the true color support.
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+

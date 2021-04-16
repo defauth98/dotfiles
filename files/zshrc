@@ -52,18 +52,41 @@ function ppkill() {
 }
 
 ZSH_THEME="spaceship"
+# ZSH_THEME="cypher"
+# ZSH_THEME="robbyrussell"
 
-plugins=(git)
-plugins=(zsh-wakatime)
+plugins=(git zsh-wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
+#Spaceship config
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  line_sep      # Line breakp
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="⚡️"
+# SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_PROMPT_SEPARATE_LINE=true
+
 # Programs alias
 alias top="bashtop"
+alias att='yay -Syu --noconfirm'
+alias tmux="tmux -2"
 
 # Config alias
 alias termconf="code ~/.config/alacritty/alacritty.yml"
 alias vimconf="code .config/nvim/init.vim"
+alias zshconf="code .zshrc"
 
 # LS to Exa
 alias l='exa -al --color=always --group-directories-first' # my preferred listing
@@ -90,7 +113,7 @@ alias addall='git add .'
 alias branch='git branch'
 alias checkout='git checkout'
 alias clone='git clone'
-alias commit='git commit -m'
+alias commit='git commit -am'
 alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
@@ -98,7 +121,7 @@ alias status='git status'
 alias tag='git tag'
 alias newtag='git tag -a'
 alias amend="git commit --amend"
-
+alias diff='git diff --color'
 # git g
 alias g="git"
 
@@ -110,6 +133,8 @@ alias vim="nvim"
 alias aa="clear && yarn start"
 alias y="yarn"
 alias tt="yarn test"
+alias cc="yarn run cypress:open"
+alias exs="cd code/trybe-exercises/"
 
 # Projetos atuais
 # My alias
@@ -131,24 +156,6 @@ alias stopen="~/code/scripts/stoppen.sh"
 #Emulador de android pixel 3
 alias android="emulator -avd Pixel_3a_API_30_x86"
 
-#Spaceship config
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  line_sep      # Line breakp
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="⚡️"
-#SPACESHIP_CHAR_SUFFIX=" "
-SPACESHIP_PROMPT_SEPARATE_LINE=true
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
