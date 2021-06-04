@@ -55,7 +55,7 @@ ZSH_THEME="spaceship"
 # ZSH_THEME="cypher"
 # ZSH_THEME="robbyrussell"
 
-plugins=(git zsh-wakatime)
+plugins=(git wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,24 +74,26 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="⚡️"
-# SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_CHAR_SYMBOL="🚀"
+SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_PROMPT_SEPARATE_LINE=true
 
 # Programs alias
+alias getReadme="/home/defauth/code/scripts/get-readme.sh"
 alias top="bashtop"
 alias att='yay -Syu --noconfirm'
 alias tmux="tmux -2"
+alias tmux-shortcuts="bat /home/defauth/code/scripts/tmux-shortcuts.sh"
 
 # Config alias
-alias termconf="code ~/.config/alacritty/alacritty.yml"
-alias vimconf="code .config/nvim/init.vim"
-alias zshconf="code .zshrc"
+alias termconf="vim ~/.config/alacritty/alacritty.yml"
+alias vimconf="vim .config/nvim/init.vim"
+alias zshconf="vim .zshrc"
 
 # LS to Exa
-alias l='exa -al --color=always --group-directories-first' # my preferred listing
+alias ls='exa -l --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
+alias ll='exa -la --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # Colorize grep output (good for log files)��,��,
@@ -142,21 +144,6 @@ alias dstop="sudo systemctl stop docker"
 alias dstart="sudo systemctl start docker"
 alias repo='gh repo view --web'
 
-#Minhas VMs
-alias vmkali="vboxmanage startvm 'Kali Linux'"
-alias kalivpn="vboxmanage startvm 'Kali HTB/THM'"
-alias vmmeta="vboxmanage startvm 'Metasploitable'"
-alias vm7="vboxmanage startvm 'IE8 - Win7'"
-alias vmxp="vboxmanage startvm 'IE6 - WinXP'"
-
-#Iniciar as vms do curso de ethical hacking
-alias pen="~/code/scripts/pen.sh"
-alias stopen="~/code/scripts/stoppen.sh"
-
-#Emulador de android pixel 3
-alias android="emulator -avd Pixel_3a_API_30_x86"
-
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
@@ -179,9 +166,9 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 zplugin light zdharma/fast-syntax-highlighting
-#zplugin light zsh-users/zsh-autosuggestions
+zplugin light zsh-users/zsh-autosuggestions
 zplugin light zsh-users/zsh-history-substring-search
-#zplugin light zsh-users/zsh-completions
+zplugin light zsh-users/zsh-completions
 zplugin light buonomo/yarn-completion
 
 
@@ -195,7 +182,7 @@ PERL_MB_OPT="--install_base \"/home/defauth/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/defauth/perl5"; export PERL_MM_OPT;
 fpath=($fpath "/home/defauth/.zfunctions")
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 export ANDROID_HOME=/home/defauth/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -203,4 +190,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export PATH="$(yarn global bin):$PATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export WINIT_UNIX_BACKEND=x11

@@ -2,12 +2,13 @@ env:
   TERM: xterm-256color
 
 window:
+  decorations: None 
   dimensions:
-    columns: 155
-    lines: 36
+    columns: 175
+    lines: 40 
   padding:
-    x: 16
-    y: 16
+    x: 8 
+    y: 8
   dynamic_title: true
   # Window title
   title: Alacritty
@@ -17,7 +18,7 @@ window:
     instance: Alacritty
     # General application class
     general: Alacritty
-  # GTK theme variant (Linux/BSD only)
+  # GTK theme variant (Linux/BSD onlyu)
 scrolling:
   history: 5000
 
@@ -26,7 +27,7 @@ background_opacity: 0.95
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "Fira Code"
+    family: "JetBrains Mono"
     # family: "Nerd Font Cascadia Code"
     # family: "Meslo LG L"
     # family: "Inconsolata"
@@ -35,7 +36,7 @@ font:
   # The bold font face
   bold:
     # family: "Hack"
-    family: "Fira Code"
+    family: "JetBrains Mono"
     # family: "Meslo LG L"
     # family: "Inconsolata"
     # Style can be specified to pick a specific face.
@@ -45,7 +46,7 @@ font:
   italic:
     # family: "Inconsolata"
     # family: "Meslo LG L"
-    family: "Fira Code"
+    family: "JetBrains Mono"
     # family: "Hack"
     # Style can be specified to pick a specific face.
     style: Italic
@@ -58,11 +59,11 @@ cursor:
 
 custom_cursor_colors: true
 hide_cursor_when_typing: true
-# Colors (iTerm 2 default theme)
 colors:
   # Default colors
   primary:
-    background: "0x101421"
+    #background: "0x101421"
+    background: "0x000000"
     foreground: "0xfffbf6"
 
   # Normal colors
